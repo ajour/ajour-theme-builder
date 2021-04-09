@@ -13,7 +13,22 @@
     };
 
     const exportTheme = () => {
-        console.log(`"exporting theme...\n\n${JSON.stringify($theme)}`);
+        const jsonTheme = JSON.stringify($theme, null, 2);
+
+        const elem = document.createElement("a");
+        elem.setAttribute(
+            "href",
+            "data:application/json;charset=utf-8," +
+                encodeURIComponent(jsonTheme)
+        );
+        elem.setAttribute("download", "ajour-custom-theme.json");
+        elem.style.display = "none";
+
+        document.body.appendChild(elem);
+
+        elem.click();
+
+        document.body.removeChild(elem);
     };
 
     onMount(async () => {
