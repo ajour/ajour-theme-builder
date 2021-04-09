@@ -2,7 +2,7 @@
     import { theme } from "../theme";
 </script>
 
-<div id="gui" style="--theme-background: {$theme.background}">
+<div id="gui" style="--theme-background: {$theme.palette.base.background}">
     <div id="gui-titlebar" class="flex flex-row">
         <div class="flex-none">
             <img src="images/titlebar-left.png" alt="" />
