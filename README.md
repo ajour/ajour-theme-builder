@@ -1,11 +1,13 @@
-### Install Deps
+# Ajour Theme Builder
 
-```
+## Install Deps
+
+```sh
 npm install
 ```
 
-### Run Dev
+## Run Dev
 
-```
+```sh
 npm run dev
 ```
