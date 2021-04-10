@@ -2,21 +2,15 @@
   import { theme } from '../theme'
 </script>
 
-<div id="gui" style="background-color: {$theme.palette.base.background}">
-  <div id="gui-titlebar" class="flex flex-row">
-    <div class="flex-none">
-      <img src="images/titlebar-left.png" alt="" />
-    </div>
-    <div class="flex-grow" />
-    <div class="flex-none">
-      <img src="images/titlebar-right.png" alt="" />
-    </div>
+<div class="gui" style="background-color: {$theme.palette.base.background}">
+  <div class="gui-titlebar-container">
+    <img src="images/titlebar-left.png" alt="" />
+    <img src="images/titlebar-right.png" alt="" />
   </div>
-  <div id="gui-window" class="">
-    <div id="gui-menu" class="flex flex-row items-center">
+  <div class="gui-window">
+    <div class="gui-menu">
       <div
-        id="gui-menu-flavor"
-        class="flex flex-row"
+        class="gui-menu-flavor"
         style="border-color: {$theme.palette.bright.primary}{50}"
       >
         <p
@@ -34,39 +28,33 @@
           ▼
         </p>
       </div>
-      <div id="gui-menu-mode1" />
-      <div id="gui-menu-mode2" />
-      <div class="flex-grow" />
-      <div id="gui-menu-version" />
-      <div id="gui-menu-about-settings" />
-    </div>
-    <div id="gui-myadons">
-      <div id="gui-myaddons-menu" />
-      <div id="gui-table">
-        <div id="gui-table-header" />
-        <div id="gui-table-body" />
-      </div>
     </div>
   </div>
 </div>
 
 <style>
-  #gui {
+  .gui {
     width: 900px;
     height: 650px;
   }
 
-  #gui-titlebar {
+  .gui-titlebar-container {
+    display: flex;
+    justify-content: space-between;
     height: 30px;
     background-color: #000000;
   }
 
-  #gui-menu {
+  .gui-menu {
+    display: flex;
+    align-items: center;
     height: 50px;
     background-color: #1c1c1c;
   }
 
-  #gui-menu-flavor {
+  .gui-menu-flavor {
+    display: flex;
+    flex-direction: row;
     width: 94px;
     height: 28px;
     border-radius: 0.125rem;
