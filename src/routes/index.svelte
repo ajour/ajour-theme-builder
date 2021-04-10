@@ -1,7 +1,6 @@
-<script>
-  import { onMount } from 'svelte'
-  import Gui from '../components/Gui.svelte'
-  import { theme, defaultTheme } from '../theme'
+<script lang="ts">
+  import Gui from '$lib/Gui.svelte'
+  import { theme, defaultTheme } from '$lib/theme'
 
   $: inputTheme = defaultTheme
 
@@ -29,15 +28,11 @@
 
     document.body.removeChild(elem)
   }
-
-  onMount(async () => {
-    history.replaceState({}, '', '/')
-  })
 </script>
 
-<main class="h-screen flex flex-col items-center">
+<main>
   <Gui />
-  <div class="my-4" />
+  <div />
   <!-- test input / reactive css color -->
   <p>Background color: {inputTheme.palette.base.background}</p>
   <input
@@ -46,7 +41,7 @@
     style="height: 50px;"
     on:input={onColorInput}
   />
-  <div class="my-4" />
+  <div />
   <!-- test export theme file -->
   <button on:click={exportTheme}>EXPORT</button>
 </main>
