@@ -1,6 +1,7 @@
 <script lang="ts">
   import Gui from '$lib/Gui.svelte'
   import { theme, defaultTheme } from '$lib/theme'
+  import { exportTheme } from '$lib/util'
 
   $: inputTheme = defaultTheme
 
@@ -11,22 +12,8 @@
     })
   }
 
-  const exportTheme = () => {
-    const jsonTheme = JSON.stringify($theme, null, 2)
-
-    const elem = document.createElement('a')
-    elem.setAttribute(
-      'href',
-      'data:application/json;charset=utf-8,' + encodeURIComponent(jsonTheme)
-    )
-    elem.setAttribute('download', 'ajour-custom-theme.json')
-    elem.style.display = 'none'
-
-    document.body.appendChild(elem)
-
-    elem.click()
-
-    document.body.removeChild(elem)
+  const onClickExportTheme = () => {
+    exportTheme($theme)
   }
 </script>
 
@@ -43,5 +30,5 @@
   />
   <div />
   <!-- test export theme file -->
-  <button on:click={exportTheme}>EXPORT</button>
+  <button on:click={onClickExportTheme}>EXPORT</button>
 </main>
