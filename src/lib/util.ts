@@ -1,21 +1,21 @@
-import type { Theme } from "$lib/theme";
+import type { Theme } from '$lib/theme'
 
 export function exportTheme(theme: Theme): void {
-    console.log(theme);
+  console.log(theme)
 
-    const jsonTheme = JSON.stringify(theme, null, 2)
+  const jsonTheme = JSON.stringify(theme, null, 2)
 
-    const elem = document.createElement('a')
-    elem.setAttribute(
-      'href',
-      'data:application/json;charset=utf-8,' + encodeURIComponent(jsonTheme)
-    )
-    elem.setAttribute('download', 'ajour-custom-theme.json')
-    elem.style.display = 'none'
+  const elem = document.createElement('a')
+  elem.setAttribute(
+    'href',
+    'data:application/json;charset=utf-8,' + encodeURIComponent(jsonTheme)
+  )
+  elem.setAttribute('download', 'ajour-custom-theme.json')
+  elem.style.display = 'none'
 
-    document.body.appendChild(elem)
+  document.body.appendChild(elem)
 
-    elem.click()
+  elem.click()
 
-    document.body.removeChild(elem)
+  document.body.removeChild(elem)
 }
