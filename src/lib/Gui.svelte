@@ -1,5 +1,6 @@
-<script>
-  import { theme } from '../theme'
+<script lang="ts">
+  import { theme } from '$lib/theme'
+
   const addons = [{ title: 'bigwigs' }, { title: 'hekili' }, { title: 'DBM' }]
 </script>
 
@@ -14,20 +15,10 @@
         class="gui-menu-flavor"
         style="border-color: {$theme.palette.bright.primary}{50}"
       >
-        <p
-          class="font-semibold text-sm self-center"
-          style="color: {$theme.palette.bright.primary}{'FF'}"
-        >
-          Retail
-        </p>
+        <p style="color: {$theme.palette.bright.primary}{'FF'}">Retail</p>
 
         <div class="flex-grow" />
-        <p
-          class="font-semibold text-xs self-center"
-          style="color: {$theme.palette.bright.primary}{'FF'}"
-        >
-          ▼
-        </p>
+        <p style="color: {$theme.palette.bright.primary}{'FF'}">▼</p>
       </div>
     </div>
     <div class="gui-addon-content">
@@ -67,7 +58,7 @@
   </div>
 </div>
 
-<style>
+<style lang="scss">
   .gui {
     width: 900px;
     height: 650px;
