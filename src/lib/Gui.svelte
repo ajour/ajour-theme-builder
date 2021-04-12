@@ -41,8 +41,63 @@
         >
           14 retail addons loaded
         </div>
+        <div
+          class="gui-addon-content-search-container"
+          style="background-color: {$theme.palette.base.foreground}{'FF'}"
+        >
+          <div
+            class="gui-addon-content-search-text"
+            style="color: {$theme.palette.normal.surface}{'FF'}"
+          >
+            Search for an addon...
+          </div>
+        </div>
       </div>
       <div class="gui-addons">
+        <div class="gui-addons-title-row">
+          <div
+            class="gui-addons-title-cell"
+            style="color: {$theme.palette.bright.surface}"
+          >
+            Addon
+          </div>
+          <div
+            class="gui-addons-title-cell"
+            style="color: {$theme.palette.bright.surface}"
+          >
+            Local version
+          </div>
+          <div
+            class="gui-addons-title-cell"
+            style="color: {$theme.palette.bright.surface}"
+          >
+            Latest version
+          </div>
+          <div
+            class="gui-addons-title-cell"
+            style="color: {$theme.palette.bright.surface}"
+          >
+            Game Version
+          </div>
+          <div
+            class="gui-addons-title-cell"
+            style="color: {$theme.palette.bright.surface}"
+          >
+            Source
+          </div>
+          <div
+            class="gui-addons-title-cell"
+            style="color: {$theme.palette.bright.surface}"
+          >
+            Latest Release
+          </div>
+          <div
+            class="gui-addons-title-cell"
+            style="color: {$theme.palette.bright.primary}"
+          >
+            Status ▼
+          </div>
+        </div>
         {#each addons as { title }}
           <div
             class="gui-addon"
@@ -74,7 +129,7 @@
   .gui-menu {
     display: flex;
     align-items: center;
-    height: 50px;
+    height: 60px;
     background-color: #1c1c1c;
   }
 
@@ -93,24 +148,45 @@
   .gui-addon-content {
     display: flex;
     flex-direction: column;
-    height: 60px;
-    margin: 12px;
+    margin: 0px 12px 12px 12px;
   }
 
   .gui-addon-menu {
+    height: 60px;
     display: flex;
+    align-items: center;
   }
+
   .gui-addon-menu > * + * {
     margin-left: 10px;
+  }
+
+  .gui-addon-menu > *:last-child {
+    margin-left: auto;
+  }
+
+  .gui-addon-content-search-container {
+    border-radius: 0.25rem;
+    padding: 4px;
+    height: 50%;
   }
 
   .gui-addons {
     display: flex;
     flex-direction: column;
-    margin-top: 12px;
   }
+
   .gui-addons > * + * {
     margin-top: 1px;
+  }
+
+  .gui-addons-title-row {
+    height: 30px;
+    display: flex;
+  }
+
+  .gui-addons-title-cell:first-child {
+    flex-grow: 1;
   }
 
   .gui-addon {
