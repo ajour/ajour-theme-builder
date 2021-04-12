@@ -1,6 +1,5 @@
-<script>
+<script lang="ts">
   import '../app.scss'
-
   import { base } from '$app/paths'
 </script>
 

@@ -16,10 +16,6 @@ module.exports = {
     // hydrate the <div id="svelte"> element in src/app.html
     target: '#svelte',
 
-    paths: {
-      base: "/ajour-theme-builder"
-    },
-
     vite: {
       ssr: {
         noExternal: Object.keys(pkg.dependencies || {}),
