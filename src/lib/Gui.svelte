@@ -1,7 +1,26 @@
 <script lang="ts">
   import { theme } from '$lib/theme'
 
-  const addons = [{ title: 'bigwigs' }, { title: 'hekili' }, { title: 'DBM' }]
+  const addons = [
+    {
+      title: 'Deadly Boss Mods (DBM)',
+      local: '9.0.25',
+      remote: '9.0.25',
+      gameVersion: '9.0.5',
+      source: 'CurseForge',
+      latest: '1 week ago',
+      status: '',
+    },
+    {
+      title: 'Venture Plan',
+      local: '4.14a',
+      remote: '4.14c',
+      gameVersion: '9.0.5',
+      source: 'TownlongYak',
+      latest: '1 day ago',
+      status: 'Update',
+    },
+  ]
 </script>
 
 <div class="gui" style="background-color: {$theme.palette.base.background}">
@@ -69,7 +88,7 @@
           </th>
           <th style="color: {$theme.palette.bright.primary}"> Status ▼ </th>
         </tr>
-        {#each addons as { title }}
+        {#each addons as { title, local, remote, gameVersion, source, latest, status }}
           <tr>
             <td
               style="background-color: {$theme.palette.base
@@ -81,33 +100,33 @@
             <td
               style="background-color: {$theme.palette.base
                 .foreground}{'FF'}; color: {$theme.palette.bright
-                .surface}{'FF'}; "
-            />
+                .surface}{'FF'}; ">{local}</td
+            >
             <td
               style="background-color: {$theme.palette.base
                 .foreground}{'FF'}; color: {$theme.palette.bright
-                .surface}{'FF'}; "
-            />
+                .surface}{'FF'}; ">{remote}</td
+            >
             <td
               style="background-color: {$theme.palette.base
                 .foreground}{'FF'}; color: {$theme.palette.bright
-                .surface}{'FF'}; "
-            />
+                .surface}{'FF'}; ">{gameVersion}</td
+            >
             <td
               style="background-color: {$theme.palette.base
                 .foreground}{'FF'}; color: {$theme.palette.bright
-                .surface}{'FF'}; "
-            />
+                .surface}{'FF'}; ">{source}</td
+            >
             <td
               style="background-color: {$theme.palette.base
                 .foreground}{'FF'}; color: {$theme.palette.bright
-                .surface}{'FF'}; "
-            />
+                .surface}{'FF'}; ">{latest}</td
+            >
             <td
               style="background-color: {$theme.palette.base
                 .foreground}{'FF'}; color: {$theme.palette.bright
-                .surface}{'FF'}; "
-            />
+                .surface}{'FF'}; ">{status}</td
+            >
           </tr>
           <div
             class="table-row-gap"
