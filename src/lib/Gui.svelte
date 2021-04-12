@@ -53,62 +53,68 @@
           </div>
         </div>
       </div>
-      <div class="gui-addons">
-        <div class="gui-addons-title-row">
-          <div
-            class="gui-addons-title-cell"
-            style="color: {$theme.palette.bright.surface}"
-          >
-            Addon
-          </div>
-          <div
-            class="gui-addons-title-cell"
-            style="color: {$theme.palette.bright.surface}"
-          >
+      <table>
+        <tr>
+          <th style="color: {$theme.palette.bright.surface}"> Addon </th>
+          <th style="color: {$theme.palette.bright.surface}">
             Local version
-          </div>
-          <div
-            class="gui-addons-title-cell"
-            style="color: {$theme.palette.bright.surface}"
-          >
+          </th>
+          <th style="color: {$theme.palette.bright.surface}">
             Latest version
-          </div>
-          <div
-            class="gui-addons-title-cell"
-            style="color: {$theme.palette.bright.surface}"
-          >
-            Game Version
-          </div>
-          <div
-            class="gui-addons-title-cell"
-            style="color: {$theme.palette.bright.surface}"
-          >
-            Source
-          </div>
-          <div
-            class="gui-addons-title-cell"
-            style="color: {$theme.palette.bright.surface}"
-          >
+          </th>
+          <th style="color: {$theme.palette.bright.surface}"> Game Version </th>
+          <th style="color: {$theme.palette.bright.surface}"> Source </th>
+          <th style="color: {$theme.palette.bright.surface}">
             Latest Release
-          </div>
-          <div
-            class="gui-addons-title-cell"
-            style="color: {$theme.palette.bright.primary}"
-          >
-            Status ▼
-          </div>
-        </div>
+          </th>
+          <th style="color: {$theme.palette.bright.primary}"> Status ▼ </th>
+        </tr>
         {#each addons as { title }}
+          <tr>
+            <td
+              style="background-color: {$theme.palette.base
+                .foreground}{'FF'}; color: {$theme.palette.bright
+                .surface}{'FF'}; "
+            >
+              {title}
+            </td>
+            <td
+              style="background-color: {$theme.palette.base
+                .foreground}{'FF'}; color: {$theme.palette.bright
+                .surface}{'FF'}; "
+            />
+            <td
+              style="background-color: {$theme.palette.base
+                .foreground}{'FF'}; color: {$theme.palette.bright
+                .surface}{'FF'}; "
+            />
+            <td
+              style="background-color: {$theme.palette.base
+                .foreground}{'FF'}; color: {$theme.palette.bright
+                .surface}{'FF'}; "
+            />
+            <td
+              style="background-color: {$theme.palette.base
+                .foreground}{'FF'}; color: {$theme.palette.bright
+                .surface}{'FF'}; "
+            />
+            <td
+              style="background-color: {$theme.palette.base
+                .foreground}{'FF'}; color: {$theme.palette.bright
+                .surface}{'FF'}; "
+            />
+            <td
+              style="background-color: {$theme.palette.base
+                .foreground}{'FF'}; color: {$theme.palette.bright
+                .surface}{'FF'}; "
+            />
+          </tr>
           <div
-            class="gui-addon"
-            style="color: {$theme.palette.bright
-              .surface}{'FF'}; background-color: {$theme.palette.base
-              .foreground}{'FF'}"
-          >
-            {title}
-          </div>
+            class="table-row-gap"
+            style="background-color: {$theme.palette.base.background}{'FF'};"
+          />
         {/each}
-      </div>
+      </table>
     </div>
   </div>
 </div>
@@ -169,27 +175,24 @@
     border-radius: 0.25rem;
     padding: 4px;
     height: 50%;
+    width: 250px;
   }
 
-  .gui-addons {
-    display: flex;
-    flex-direction: column;
+  table {
+    width: 100%;
+    border-collapse: collapse;
   }
 
-  .gui-addons > * + * {
-    margin-top: 1px;
-  }
-
-  .gui-addons-title-row {
+  th {
+    text-align: left;
     height: 30px;
-    display: flex;
   }
 
-  .gui-addons-title-cell:first-child {
-    flex-grow: 1;
-  }
-
-  .gui-addon {
+  td {
     height: 26px;
+  }
+
+  .table-row-gap {
+    height: 1px;
   }
 </style>
