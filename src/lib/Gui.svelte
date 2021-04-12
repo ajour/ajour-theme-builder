@@ -23,7 +23,11 @@
   ]
 </script>
 
-<div class="gui" style="background-color: {$theme.palette.base.background}">
+<div
+  class="gui"
+  style="background-color: {$theme.palette.base.background}"
+  unselectable={true}
+>
   <div class="gui-titlebar-container">
     <img src="images/titlebar-left.png" alt="" />
     <img src="images/titlebar-right.png" alt="" />
@@ -142,6 +146,12 @@
   .gui {
     width: 900px;
     height: 650px;
+
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
   }
 
   .gui-titlebar-container {
