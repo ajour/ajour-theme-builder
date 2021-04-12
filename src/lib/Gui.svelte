@@ -99,33 +99,33 @@
             </td>
             <td
               style="background-color: {$theme.palette.base
-                .foreground}{'FF'}; color: {$theme.palette.bright
+                .foreground}{'FF'}; color: {$theme.palette.normal
                 .surface}{'FF'}; ">{local}</td
             >
             <td
               style="background-color: {$theme.palette.base
-                .foreground}{'FF'}; color: {$theme.palette.bright
+                .foreground}{'FF'}; color: {$theme.palette.normal
                 .surface}{'FF'}; ">{remote}</td
             >
             <td
               style="background-color: {$theme.palette.base
-                .foreground}{'FF'}; color: {$theme.palette.bright
+                .foreground}{'FF'}; color: {$theme.palette.normal
                 .surface}{'FF'}; ">{gameVersion}</td
             >
             <td
               style="background-color: {$theme.palette.base
-                .foreground}{'FF'}; color: {$theme.palette.bright
+                .foreground}{'FF'}; color: {$theme.palette.normal
                 .surface}{'FF'}; ">{source}</td
             >
             <td
               style="background-color: {$theme.palette.base
-                .foreground}{'FF'}; color: {$theme.palette.bright
+                .foreground}{'FF'}; color: {$theme.palette.normal
                 .surface}{'FF'}; ">{latest}</td
             >
             <td
               style="background-color: {$theme.palette.base
                 .foreground}{'FF'}; color: {$theme.palette.bright
-                .surface}{'FF'}; ">{status}</td
+                .secondary}{'FF'}; ">{status}</td
             >
           </tr>
           <div
