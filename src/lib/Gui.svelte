@@ -143,6 +143,10 @@
 </div>
 
 <style lang="scss">
+  * {
+    font-weight: 600;
+  }
+
   .gui {
     width: 900px;
     height: 650px;
