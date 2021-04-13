@@ -1,47 +1,65 @@
 <script lang="ts">
   import { theme } from '$lib/theme'
-  import { onMount } from 'svelte'
-  import { shareModalShown } from './store'
+  import { beforeUpdate } from 'svelte'
   import { buildThemeUrl } from './util'
+  import { fade } from 'svelte/transition'
+  import { shareUrlShown } from './store'
 
-  $: url = null
+  let inputElem: HTMLInputElement
 
-  const onClickClose = () => {
-    $shareModalShown = false
+  $: copied = false
+  $: url = buildThemeUrl($theme)
+
+  const onClickCopy = async () => {
+    inputElem.select()
+    document.execCommand('copy')
+    copied = true
   }
 
-  onMount(() => {
+  const actionDestroy = (_) => {
+    $shareUrlShown = false
+  }
+
+  beforeUpdate(() => {
     url = buildThemeUrl($theme)
   })
 </script>
 
-<div class="overlay">
-  <div class="modal">
-    <button class="modal-close" on:click={onClickClose}>X</button>
-    <p>{url}</p>
+<div
+  class="share-container"
+  in:fade={{ delay: 250, duration: 300 }}
+  out:fade={{ delay: 1000, duration: 300 }}
+>
+  <input value={url} bind:this={inputElem} />
+  <button on:click={onClickCopy}>Copy</button>
+  <div
+    class="share-copied-text"
+    style="visibility: {copied ? 'visible' : 'hidden'}"
+  >
+    Copied!
   </div>
+  {#if copied}
+    <div use:actionDestroy />
+  {/if}
 </div>
 
 <style lang="scss">
-  .overlay {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 5;
-
+  .share-container {
+    margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    .modal {
-      background-color: white;
-      overflow: hidden;
-      width: 300px;
-      height: 200px;
+    input {
+      padding: 2px 6px;
       border-radius: 0.25rem;
+      border: solid #ba84fc;
+      border-width: 2px;
+      width: 500px;
+    }
+
+    .share-copied-text {
+      padding: 4px;
     }
   }
 </style>

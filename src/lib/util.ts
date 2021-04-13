@@ -30,8 +30,6 @@ export function buildThemeUrl(theme: Theme): string {
 
   const url = `${location.protocol}//${location.hostname}${port}?${params}`
 
-  console.log(url)
-
   return url
 }
 
