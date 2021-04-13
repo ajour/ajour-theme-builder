@@ -45,7 +45,8 @@ interface Colors {
   error: string
 }
 
-const theme = writable(defaultTheme)
+// LOL deep copy hack
+const theme = writable<Theme>(JSON.parse(JSON.stringify(defaultTheme)))
 
 export { theme, defaultTheme }
 export type { Theme }
