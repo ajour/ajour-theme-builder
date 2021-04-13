@@ -6,16 +6,17 @@
   import { exportTheme } from '$lib/util'
   import { onMount } from 'svelte'
   import { page } from '$app/stores'
-  import { shareUrlShown } from '$lib/store'
 
   import './index.scss'
+
+  $: showShare = false
 
   const onClickExportTheme = () => {
     exportTheme($theme)
   }
 
   const onClickShareTheme = () => {
-    $shareUrlShown = true
+    showShare = true
   }
 
   const onClickReset = () => {
@@ -47,7 +48,7 @@
       <button on:click={onClickReset}>Reset</button>
     </div>
   </div>
-  {#if $shareUrlShown}
-    <Share />
+  {#if showShare}
+    <Share on:destroyme={() => (showShare = false)} />
   {/if}
 </main>

@@ -1,11 +1,11 @@
 <script lang="ts">
   import { theme } from '$lib/theme'
-  import { beforeUpdate } from 'svelte'
+  import { beforeUpdate, createEventDispatcher } from 'svelte'
   import { buildThemeUrl } from './util'
   import { fade } from 'svelte/transition'
-  import { shareUrlShown } from './store'
 
   let inputElem: HTMLInputElement
+  const dispatch = createEventDispatcher()
 
   $: copied = false
   $: url = buildThemeUrl($theme)
@@ -14,10 +14,8 @@
     inputElem.select()
     document.execCommand('copy')
     copied = true
-  }
 
-  const actionDestroy = (_) => {
-    $shareUrlShown = false
+    dispatch('destroyme')
   }
 
   beforeUpdate(() => {
@@ -38,9 +36,6 @@
   >
     Copied!
   </div>
-  {#if copied}
-    <div use:actionDestroy />
-  {/if}
 </div>
 
 <style lang="scss">
