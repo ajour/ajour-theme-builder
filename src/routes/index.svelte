@@ -19,7 +19,7 @@
   }
 
   const onClickReset = () => {
-    window.history.pushState('', '', '/')
+    window.history.replaceState('', '', '/')
     $theme = defaultTheme
   }
 
