@@ -1,8 +1,6 @@
 import type { Theme } from '$lib/theme'
 
 export function exportTheme(theme: Theme): void {
-  console.log(theme)
-
   const jsonTheme = JSON.stringify(theme, null, 2)
 
   const elem = document.createElement('a')

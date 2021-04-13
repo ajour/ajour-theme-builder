@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store'
 
-export const defaultTheme: Theme = {
+const defaultTheme: Theme = {
   name: 'Dark',
   palette: {
     base: {
@@ -22,27 +22,30 @@ export const defaultTheme: Theme = {
   },
 }
 
-export const theme = writable(defaultTheme)
-
-export interface Theme {
+interface Theme {
   name: string
   palette: ColorPalette
 }
 
-export interface ColorPalette {
+interface ColorPalette {
   base: BaseColors
   normal: Colors
   bright: Colors
 }
 
-export interface BaseColors {
+interface BaseColors {
   background: string
   foreground: string
 }
 
-export interface Colors {
+interface Colors {
   primary: string
   secondary: string
   surface: string
   error: string
 }
+
+const theme = writable(defaultTheme)
+
+export { theme }
+export type { Theme }
