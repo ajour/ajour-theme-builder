@@ -19,3 +19,14 @@ export function exportTheme(theme: Theme): void {
 
   document.body.removeChild(elem)
 }
+
+export function shareTheme(theme: Theme): void {
+  const params = `theme=${encodeURIComponent(JSON.stringify(theme))}`;
+
+  const location = window.location;
+  const port = location.port ? `:${location.port}` : ''
+
+  const url = `${location.protocol}//${location.hostname}${port}?${params}`
+
+  console.log(url)
+}

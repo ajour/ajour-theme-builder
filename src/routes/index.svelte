@@ -1,34 +1,40 @@
 <script lang="ts">
   import Gui from '$lib/Gui.svelte'
-  import { theme, defaultTheme } from '$lib/theme'
-  import { exportTheme } from '$lib/util'
-
-  $: inputTheme = defaultTheme
-
-  const onColorInput = () => {
-    theme.update((theme) => {
-      theme = inputTheme
-      return theme
-    })
-  }
+  import { theme } from '$lib/theme'
+  import { exportTheme, shareTheme } from '$lib/util'
+  import { onMount } from 'svelte'
+  import { page } from '$app/stores'
 
   const onClickExportTheme = () => {
     exportTheme($theme)
   }
+
+  const onClickShareTheme = () => {
+    shareTheme($theme)
+  }
+
+  onMount(() => {
+    const queryTheme = JSON.parse($page.query.get('theme'))
+
+    if (queryTheme) {
+      $theme = queryTheme
+    }
+  })
 </script>
 
 <main>
   <Gui />
   <div />
   <!-- test input / reactive css color -->
-  <p>Background color: {inputTheme.palette.base.background}</p>
+  <p>Background color: {$theme.palette.base.background}</p>
   <input
     type="color"
-    bind:value={inputTheme.palette.base.background}
+    bind:value={$theme.palette.base.background}
     style="height: 50px;"
-    on:input={onColorInput}
   />
   <div />
   <!-- test export theme file -->
   <button on:click={onClickExportTheme}>EXPORT</button>
+  <!-- test export theme file -->
+  <button on:click={onClickShareTheme}>SHARE</button>
 </main>
