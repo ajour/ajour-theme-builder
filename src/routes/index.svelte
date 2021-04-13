@@ -28,17 +28,6 @@
 
 <main>
   <Gui />
-  <div />
-  <!-- test input / reactive css color -->
-  <p>Background color: {$theme.palette.base.background}</p>
-  <div />
-  <!-- test export theme file -->
-  <button on:click={onClickExportTheme}>EXPORT</button>
-  <!-- test export theme file -->
-  <button on:click={onClickShareTheme}>SHARE</button>
-  {#if $shareModalShown}
-    <Share />
-  {/if}
   <div class="grid-container">
     <div class="base-theme-colors">Base</div>
     <div class="normal-theme-colors">Normal</div>
@@ -72,6 +61,21 @@
     </div>
     <div class="bright-error">
       <input type="color" bind:value={$theme.palette.bright.error} />
+    </div>
+  </div>
+
+  <div class="grid-buttons-container">
+    <div class="export-button">
+      <button on:click={onClickExportTheme}>Export</button>
+    </div>
+    <div class="share-button">
+      <button on:click={onClickShareTheme}>Share</button>
+      {#if $shareModalShown}
+        <Share />
+      {/if}
+    </div>
+    <div class="reset-button">
+      <button on:click={() => {}}>Reset</button>
     </div>
   </div>
 </main>

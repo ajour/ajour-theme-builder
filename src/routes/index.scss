@@ -1,9 +1,33 @@
+.grid-buttons-container {
+  display: grid;
+  grid-template-columns: min-content min-content;
+  grid-template-rows: 1fr;
+  gap: 0px 5px;
+  align-items: center;
+  justify-content: center;
+  grid-template-areas: 'export-button share-button reset-button';
+}
+
+.export-button {
+  grid-area: export-button;
+}
+
+.share-button {
+  grid-area: share-button;
+}
+
+.reset-button {
+  grid-area: reset-button;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 50px min-content min-content min-content min-content;
   grid-template-rows: min-content min-content min-content;
   gap: 0px 0px;
   align-items: center;
+  justify-content: center;
+  margin: 10px;
   grid-template-areas:
     'base-theme-colors base-foreground base-background . .'
     'normal-theme-colors normal-primary normal-secondary normal-surface normal-error'

@@ -46,7 +46,10 @@
     <img src="images/titlebar-right.png" alt="" />
   </div>
   <div>
-    <div class="gui-menu">
+    <div
+      class="gui-menu"
+      style="background-color: {$theme.palette.base.foreground}"
+    >
       <div
         class="gui-menu-flavor"
         style="border-color: {$theme.palette.bright.primary}{32}"
