@@ -36,12 +36,67 @@
     <div class="gui-menu">
       <div
         class="gui-menu-flavor"
-        style="border-color: {$theme.palette.bright.primary}{50}"
+        style="border-color: {$theme.palette.bright.primary}{32}"
       >
         <p style="color: {$theme.palette.bright.primary}{'FF'}">Retail</p>
-
-        <div class="flex-grow" />
         <p style="color: {$theme.palette.bright.primary}{'FF'}">▼</p>
+      </div>
+      <div
+        class="gui-menu-segmented "
+        style="border-color: {$theme.palette.bright.primary}{32}"
+      >
+        <div
+          class="gui-menu-segmented-button gui-menu-segmented-button-active"
+          style="color: {$theme.palette.bright
+            .primary}{'FF'}; background-color: {$theme.palette.bright
+            .primary}{32}"
+        >
+          <p>My Addons</p>
+        </div>
+        <div
+          class="gui-menu-segmented-button"
+          style="color: {$theme.palette.bright.primary}{'FF'}"
+        >
+          <p>Wago</p>
+        </div>
+      </div>
+      <div
+        class="gui-menu-segmented"
+        style="border-color: {$theme.palette.bright.primary}{32}"
+      >
+        <div
+          class="gui-menu-segmented-button"
+          style="color: {$theme.palette.bright.primary}{'FF'}"
+        >
+          <p>Catalog</p>
+        </div>
+        <div
+          class="gui-menu-segmented-button"
+          style="color: {$theme.palette.bright.primary}{'FF'}"
+        >
+          <p>Install from URL</p>
+        </div>
+      </div>
+      <div class="gui-menu-grow" />
+      <div class="gui-menu-version">
+        <p style="color: {$theme.palette.normal.surface}">1.1.0</p>
+      </div>
+      <div
+        class="gui-menu-segmented"
+        style="border-color: {$theme.palette.bright.primary}{32}"
+      >
+        <div
+          class="gui-menu-segmented-button"
+          style="color: {$theme.palette.bright.primary}{'FF'}"
+        >
+          <p>About</p>
+        </div>
+        <div
+          class="gui-menu-segmented-button"
+          style="color: {$theme.palette.bright.primary}{'FF'}"
+        >
+          <p>Settings</p>
+        </div>
       </div>
     </div>
     <div class="gui-addon-content">
@@ -170,18 +225,50 @@
     align-items: center;
     height: 60px;
     background-color: #1c1c1c;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .gui-menu-flavor {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     width: 94px;
-    height: 28px;
-    border-radius: 0.125rem;
+    height: 50%;
+    border: solid;
+    border-radius: 0.25rem;
     border-width: 1px;
-    margin-left: 10px;
     padding-left: 4px;
     padding-right: 8px;
+  }
+
+  .gui-menu-segmented {
+    height: 50%;
+    border: solid;
+    border-radius: 0.25rem;
+    border-width: 1px;
+    margin-left: 10px;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .gui-menu-segmented-button {
+    padding: 0px 6px;
+    display: flex;
+    align-items: center;
+  }
+
+  .gui-menu-segmented-button > p {
+    margin: 0px;
+  }
+
+  .gui-menu-segmented-button-active {
+    margin: 1px;
+    border-radius: 0.25rem;
+  }
+
+  .gui-menu-grow {
+    flex-grow: 1;
   }
 
   .gui-addon-content {
@@ -206,9 +293,15 @@
 
   .gui-addon-content-search-container {
     border-radius: 0.25rem;
-    padding: 4px;
+    padding: 0px 4px;
     height: 50%;
     width: 250px;
+    display: flex;
+    align-items: center;
+  }
+
+  .gui-addon-content-search-text {
+    margin-left: 4px;
   }
 
   table {
