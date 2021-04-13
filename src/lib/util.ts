@@ -18,8 +18,12 @@ export function exportTheme(theme: Theme): void {
   document.body.removeChild(elem)
 }
 
-export function shareThemeUrl(theme: Theme): string {
-  const params = `theme=${encodeURIComponent(JSON.stringify(theme))}`
+function encodeThemeParam(theme: Theme): string {
+  return `theme=${encodeURIComponent(JSON.stringify(theme))}`
+}
+
+export function buildThemeUrl(theme: Theme): string {
+  const params = encodeThemeParam(theme)
 
   const location = window.location
   const port = location.port ? `:${location.port}` : ''
@@ -29,4 +33,10 @@ export function shareThemeUrl(theme: Theme): string {
   console.log(url)
 
   return url
+}
+
+export function updateThemeUrlParams(theme: Theme): void {
+  const params = encodeThemeParam(theme)
+
+  window.history.replaceState('', '', `/?${params}`)
 }

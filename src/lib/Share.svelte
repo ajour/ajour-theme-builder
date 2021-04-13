@@ -2,7 +2,7 @@
   import { theme } from '$lib/theme'
   import { onMount } from 'svelte'
   import { shareModalShown } from './store'
-  import { shareThemeUrl } from './util'
+  import { buildThemeUrl } from './util'
 
   $: url = null
 
@@ -11,7 +11,7 @@
   }
 
   onMount(() => {
-    url = shareThemeUrl($theme)
+    url = buildThemeUrl($theme)
   })
 </script>
 
