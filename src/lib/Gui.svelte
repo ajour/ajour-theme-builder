@@ -384,6 +384,14 @@
     height: 26px;
   }
 
+  td:first-child {
+    padding-left: 4px;
+  }
+
+  th:first-child {
+    padding-left: 4px;
+  }
+
   .table-row-gap {
     height: 1px;
   }
