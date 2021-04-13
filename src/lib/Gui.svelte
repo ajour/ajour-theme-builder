@@ -1,5 +1,6 @@
 <script lang="ts">
   import { theme } from '$lib/theme'
+  import './Gui.scss'
 
   const addons = [
     {
@@ -29,7 +30,7 @@
       gameVersion: '9.0.5',
       source: 'CurseForge',
       latest: '1 day ago',
-      status: '',
+      status: 'Update',
       isExpanded: true,
     },
   ]
@@ -44,7 +45,7 @@
     <img src="images/titlebar-left.png" alt="" />
     <img src="images/titlebar-right.png" alt="" />
   </div>
-  <div class="gui-window">
+  <div>
     <div class="gui-menu">
       <div
         class="gui-menu-flavor"
@@ -262,167 +263,3 @@
     </div>
   </div>
 </div>
-
-<style lang="scss">
-  * {
-    font-weight: 600;
-  }
-
-  .gui {
-    width: 900px;
-    height: 650px;
-
-    -moz-user-select: -moz-none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-  }
-
-  .gui-titlebar-container {
-    display: flex;
-    justify-content: space-between;
-    height: 30px;
-    background-color: #000000;
-  }
-
-  .gui-menu {
-    display: flex;
-    align-items: center;
-    height: 60px;
-    background-color: #1c1c1c;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .gui-menu-flavor {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 94px;
-    height: 50%;
-    border: solid;
-    border-radius: 0.25rem;
-    border-width: 1px;
-    padding-left: 4px;
-    padding-right: 8px;
-  }
-
-  .gui-menu-segmented {
-    height: 50%;
-    border: solid;
-    border-radius: 0.25rem;
-    border-width: 1px;
-    margin-left: 10px;
-    display: flex;
-    align-items: stretch;
-  }
-
-  .gui-menu-segmented-button {
-    padding: 0px 6px;
-    display: flex;
-    align-items: center;
-  }
-
-  .gui-menu-segmented-button > p {
-    margin: 0px;
-  }
-
-  .gui-menu-segmented-button-active {
-    margin: 1px;
-    border-radius: 0.25rem;
-  }
-
-  .gui-menu-grow {
-    flex-grow: 1;
-  }
-
-  .gui-addon-content {
-    display: flex;
-    flex-direction: column;
-    margin: 0px 12px 12px 12px;
-  }
-
-  .gui-addon-menu {
-    height: 60px;
-    display: flex;
-    align-items: center;
-  }
-
-  .gui-addon-menu > * + * {
-    margin-left: 10px;
-  }
-
-  .gui-addon-menu > *:last-child {
-    margin-left: auto;
-  }
-
-  .gui-addon-content-search-container {
-    border-radius: 0.25rem;
-    padding: 0px 4px;
-    height: 50%;
-    width: 250px;
-    display: flex;
-    align-items: center;
-  }
-
-  .gui-addon-content-search-text {
-    margin-left: 4px;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  th {
-    text-align: left;
-    height: 30px;
-  }
-
-  td {
-    height: 26px;
-  }
-
-  td:first-child {
-    padding-left: 4px;
-  }
-
-  th:first-child {
-    padding-left: 4px;
-  }
-
-  .table-row-gap {
-    height: 1px;
-  }
-
-  .expanded-row {
-    height: 266px;
-    display: flex;
-    flex-direction: column;
-    padding-left: 20px;
-    padding-top: 20px;
-  }
-
-  .expanded-row > * + * {
-    margin-top: 10px;
-  }
-
-  .expanded-row > * > p {
-    margin: 0px;
-  }
-
-  .expanded-row-grow {
-    flex-grow: 1;
-  }
-
-  .expanded-row-buttons {
-    display: flex;
-    justify-content: right;
-    margin-right: 20px;
-  }
-
-  .expanded-row-buttons > * + * {
-    margin-left: 10px;
-  }
-</style>
