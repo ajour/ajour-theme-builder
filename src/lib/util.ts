@@ -20,13 +20,15 @@ export function exportTheme(theme: Theme): void {
   document.body.removeChild(elem)
 }
 
-export function shareTheme(theme: Theme): void {
-  const params = `theme=${encodeURIComponent(JSON.stringify(theme))}`;
+export function shareThemeUrl(theme: Theme): string {
+  const params = `theme=${encodeURIComponent(JSON.stringify(theme))}`
 
-  const location = window.location;
+  const location = window.location
   const port = location.port ? `:${location.port}` : ''
 
   const url = `${location.protocol}//${location.hostname}${port}?${params}`
 
   console.log(url)
+
+  return url
 }
