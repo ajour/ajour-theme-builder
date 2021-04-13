@@ -1,0 +1,63 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 50px min-content min-content min-content min-content;
+  grid-template-rows: min-content min-content min-content;
+  gap: 0px 0px;
+  align-items: center;
+  grid-template-areas:
+    'base-theme-colors base-foreground base-background . .'
+    'normal-theme-colors normal-primary normal-secondary normal-surface normal-error'
+    'bright-theme-colors bright-primary bright-secondary bright-surface bright-error';
+}
+
+.base-theme-colors {
+  grid-area: base-theme-colors;
+}
+
+.normal-theme-colors {
+  grid-area: normal-theme-colors;
+}
+
+.bright-theme-colors {
+  grid-area: bright-theme-colors;
+}
+
+.base-foreground {
+  grid-area: base-foreground;
+}
+
+.base-background {
+  grid-area: base-background;
+}
+
+.normal-primary {
+  grid-area: normal-primary;
+}
+
+.normal-secondary {
+  grid-area: normal-secondary;
+}
+
+.normal-surface {
+  grid-area: normal-surface;
+}
+
+.normal-error {
+  grid-area: normal-error;
+}
+
+.bright-primary {
+  grid-area: bright-primary;
+}
+
+.bright-secondary {
+  grid-area: bright-secondary;
+}
+
+.bright-surface {
+  grid-area: bright-surface;
+}
+
+.bright-error {
+  grid-area: bright-error;
+}
