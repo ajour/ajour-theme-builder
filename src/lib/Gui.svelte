@@ -26,7 +26,7 @@
     {
       title: 'WeakAuras',
       local: '3.2.3',
-      remote: '3.2.3',
+      remote: '3.2.4',
       gameVersion: '9.0.5',
       source: 'CurseForge',
       latest: '1 day ago',
@@ -152,14 +152,12 @@
           <th style="color: {$theme.palette.bright.surface}">
             Latest version
           </th>
-          <th style="color: {$theme.palette.bright.surface}"> Game Version </th>
-          <th style="color: {$theme.palette.bright.surface}"> Source </th>
           <th style="color: {$theme.palette.bright.surface}">
             Latest Release
           </th>
           <th style="color: {$theme.palette.bright.primary}"> Status ▼ </th>
         </tr>
-        {#each addons as { title, local, remote, gameVersion, source, latest, status, isExpanded }}
+        {#each addons as { title, local, remote, latest, status, isExpanded }}
           <tr>
             <td
               style="background-color: {$theme.palette.base
@@ -170,33 +168,27 @@
               {title}
             </td>
             <td
-              style="background-color: {$theme.palette.base
+              style="width: 15%; background-color: {$theme.palette.base
                 .foreground}; color: {$theme.palette.normal.surface}; "
               >{local}</td
             >
             <td
-              style="background-color: {$theme.palette.base
+              style="width: 15%; background-color: {$theme.palette.base
                 .foreground}; color: {$theme.palette.normal.surface}; "
               >{remote}</td
             >
             <td
-              style="background-color: {$theme.palette.base
-                .foreground}; color: {$theme.palette.normal.surface}; "
-              >{gameVersion}</td
-            >
-            <td
-              style="background-color: {$theme.palette.base
-                .foreground}; color: {$theme.palette.normal.surface}; "
-              >{source}</td
-            >
-            <td
-              style="background-color: {$theme.palette.base
+              style="width: 15%; background-color: {$theme.palette.base
                 .foreground}; color: {$theme.palette.normal.surface}; "
               >{latest}</td
             >
             <td
-              style="background-color: {$theme.palette.base
-                .foreground}; color: {$theme.palette.bright.secondary}; "
+              class="align-center"
+              style="width: 8%; background-color: {isExpanded
+                ? $theme.palette.normal.secondary
+                : $theme.palette.base.foreground}; border-radius: {isExpanded
+                ? '2px'
+                : '0px'}; color: {$theme.palette.bright.secondary}; "
               >{status}</td
             >
           </tr>
@@ -224,34 +216,47 @@
                     </p>
                     <p style="color: {$theme.palette.normal.surface}">
                       A powerful, comprehensive utility for displaying graphics
-                      and information based on buffs, debuffs, and other
-                      triggers
-                    </p>
-                  </div>
-                  <div>
-                    <p style="color: {$theme.palette.bright.surface}">
-                      Release channel
+                      and information.
                     </p>
                   </div>
                   <div class="expanded-row-grow" />
                   <div class="expanded-row-buttons">
                     <div>
-                      <p style="color: {$theme.palette.bright.primary}">
+                      <p
+                        class="expanded-button"
+                        style="color: {$theme.palette.bright
+                          .primary}; background-color: transparent"
+                      >
                         Website
                       </p>
                     </div>
                     <div>
-                      <p style="color: {$theme.palette.bright.primary}">
+                      <p
+                        class="expanded-button"
+                        style="color: {$theme.palette.bright
+                          .primary}; background-color: transparent"
+                      >
                         Changelog
                       </p>
                     </div>
                     <div>
-                      <p style="color: {$theme.palette.bright.primary}">
+                      <p
+                        class="expanded-button"
+                        style="color: {$theme.palette.bright
+                          .primary}; background-color: transparent"
+                      >
                         Exclude
                       </p>
                     </div>
                     <div>
-                      <p style="color: {$theme.palette.bright.error}">Delete</p>
+                      <p
+                        class="expanded-button"
+                        style="color: {$theme.palette.bright
+                          .error}; background-color: {$theme.palette.normal
+                          .error}"
+                      >
+                        Delete
+                      </p>
                     </div>
                   </div>
                 </div>
