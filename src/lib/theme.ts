@@ -47,5 +47,5 @@ interface Colors {
 
 const theme = writable(defaultTheme)
 
-export { theme }
+export { theme, defaultTheme }
 export type { Theme }

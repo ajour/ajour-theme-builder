@@ -2,7 +2,7 @@
   import Gui from '$lib/Gui.svelte'
   import Colors from '$lib/Colors.svelte'
   import Share from '$lib/Share.svelte'
-  import { theme } from '$lib/theme'
+  import { theme, defaultTheme } from '$lib/theme'
   import { exportTheme } from '$lib/util'
   import { onMount } from 'svelte'
   import { page } from '$app/stores'
@@ -16,6 +16,11 @@
 
   const onClickShareTheme = () => {
     $shareModalShown = true
+  }
+
+  const onClickReset = () => {
+    window.history.pushState('', '', '/')
+    $theme = defaultTheme
   }
 
   onMount(() => {
@@ -42,7 +47,7 @@
       {/if}
     </div>
     <div class="reset-button">
-      <button on:click={() => {}}>Reset</button>
+      <button on:click={onClickReset}>Reset</button>
     </div>
   </div>
 </main>
