@@ -52,14 +52,14 @@
     >
       <div
         class="gui-menu-flavor"
-        style="border-color: {$theme.palette.bright.primary}{32}"
+        style="border-color: {$theme.palette.normal.primary}{'7F'}"
       >
         <p style="color: {$theme.palette.bright.primary}">Retail</p>
         <p style="color: {$theme.palette.bright.primary}">▼</p>
       </div>
       <div
         class="gui-menu-segmented "
-        style="border-color: {$theme.palette.bright.primary}{32}"
+        style="border-color: {$theme.palette.normal.primary}{'7F'}"
       >
         <div
           class="gui-menu-segmented-button gui-menu-segmented-button-active"
@@ -77,7 +77,7 @@
       </div>
       <div
         class="gui-menu-segmented"
-        style="border-color: {$theme.palette.bright.primary}{32}"
+        style="border-color: {$theme.palette.normal.primary}{'7F'}"
       >
         <div
           class="gui-menu-segmented-button"
@@ -98,7 +98,7 @@
       </div>
       <div
         class="gui-menu-segmented"
-        style="border-color: {$theme.palette.bright.primary}{32}"
+        style="border-color: {$theme.palette.normal.primary}{'7F'}"
       >
         <div
           class="gui-menu-segmented-button"
