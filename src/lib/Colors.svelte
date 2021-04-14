@@ -16,6 +16,10 @@
     resetTheme(selectedTheme)
     updateThemeUrlParams($theme)
   }
+
+  const onNameChange = () => {
+    updateThemeUrlParams($theme)
+  }
 </script>
 
 <div class="grid-theme-container">
@@ -40,7 +44,12 @@
     </select>
   </div>
   <div class="theme-name-input">
-    <input class="name-input" type="text" bind:value={$theme.name} />
+    <input
+      class="name-input"
+      type="text"
+      bind:value={$theme.name}
+      on:change={onNameChange}
+    />
   </div>
   <div class="base-foreground">
     <input
