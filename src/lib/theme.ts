@@ -75,7 +75,7 @@ interface Colors {
 const theme = writable<Theme>(cloneDeep(dark))
 
 const resetTheme = (): void => {
-  theme.set(dark)
+  theme.set(cloneDeep(dark))
 }
 
 export { theme, allThemes, resetTheme }
