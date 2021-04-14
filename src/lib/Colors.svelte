@@ -14,6 +14,7 @@
 
   const onTemplateChange = () => {
     resetTheme(selectedTheme)
+    updateThemeUrlParams($theme)
   }
 </script>
 
