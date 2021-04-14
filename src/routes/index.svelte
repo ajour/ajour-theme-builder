@@ -3,16 +3,11 @@
   import Colors from '$lib/Colors.svelte'
   import Share from '$lib/Share.svelte'
   import { theme, resetTheme } from '$lib/theme'
-  import { exportTheme } from '$lib/util'
   import { onMount } from 'svelte'
 
   import './index.scss'
 
   $: showShare = false
-
-  const onClickExportTheme = () => {
-    exportTheme($theme)
-  }
 
   const onClickShareTheme = () => {
     showShare = true
@@ -38,9 +33,6 @@
   <Colors />
   <!-- TODO: We should refactor this into its own component as well.-->
   <div class="grid-buttons-container">
-    <div class="export-button">
-      <button on:click={onClickExportTheme}>Export</button>
-    </div>
     <div class="share-button">
       <button on:click={onClickShareTheme}>Share</button>
     </div>

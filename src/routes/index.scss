@@ -5,11 +5,7 @@
   gap: 0px 5px;
   align-items: center;
   justify-content: center;
-  grid-template-areas: 'export-button share-button reset-button';
-}
-
-.export-button {
-  grid-area: export-button;
+  grid-template-areas: 'share-button reset-button';
 }
 
 .share-button {
