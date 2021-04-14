@@ -1,16 +1,26 @@
 <script lang="ts">
   import Gui from '$lib/Gui.svelte'
   import Colors from '$lib/Colors.svelte'
-  import Share from '$lib/Share.svelte'
   import { theme, resetTheme } from '$lib/theme'
+  import { buildThemeUrl } from '$lib/util'
   import { onMount } from 'svelte'
 
   import './index.scss'
 
-  $: showShare = false
+  $: copied = false
 
-  const onClickShareTheme = () => {
-    showShare = true
+  const onClickCopyTheme = () => {
+    const url = buildThemeUrl($theme)
+    document.addEventListener('copy', function (e) {
+      e.clipboardData.setData('text/plain', url)
+      e.preventDefault()
+    })
+    document.execCommand('copy')
+
+    copied = true
+    setTimeout(() => {
+      copied = false
+    }, 1200)
   }
 
   const onClickReset = () => {
@@ -33,14 +43,14 @@
   <Colors />
   <!-- TODO: We should refactor this into its own component as well.-->
   <div class="grid-buttons-container">
-    <div class="share-button">
-      <button on:click={onClickShareTheme}>Share</button>
+    <div class="copy-button">
+      <button on:click={onClickCopyTheme}>Copy</button>
     </div>
     <div class="reset-button">
       <button on:click={onClickReset}>Reset</button>
     </div>
   </div>
-  {#if showShare}
-    <Share on:destroyme={() => (showShare = false)} />
+  {#if copied}
+    <div class="share-container">Copied!</div>
   {/if}
 </main>

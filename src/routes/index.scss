@@ -8,10 +8,17 @@
   grid-template-areas: 'share-button reset-button';
 }
 
-.share-button {
+.copy-button {
   grid-area: share-button;
 }
 
 .reset-button {
   grid-area: reset-button;
+}
+
+.share-container {
+  padding-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

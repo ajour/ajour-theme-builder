@@ -7,15 +7,19 @@
   justify-content: center;
   margin: 20px;
   grid-template-areas:
-    'theme-template theme-template-select theme-template-select theme-template-select .'
-    'base-theme-colors base-foreground base-background . .'
+    'base-theme-colors base-foreground base-background base-background base-background'
     'normal-theme-colors normal-primary normal-secondary normal-surface normal-error'
     'bright-theme-colors bright-primary bright-secondary bright-surface bright-error'
-    'theme-name theme-name-input theme-name-input theme-name-input .';
+    'theme-template theme-template-select theme-template-select theme-template-select theme-template-select'
+    'theme-name theme-name-input theme-name-input theme-name-input theme-name-input';
 }
 
 .theme-template-select {
   grid-area: theme-template-select;
+
+  .theme-select {
+    width: 204px;
+  }
 }
 
 .theme-template {
@@ -28,6 +32,10 @@
 
 .theme-name-input {
   grid-area: theme-name-input;
+
+  .name-input {
+    width: 196px;
+  }
 }
 
 .base-theme-colors {

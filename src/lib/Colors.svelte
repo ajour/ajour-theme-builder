@@ -19,14 +19,18 @@
 </script>
 
 <div class="grid-theme-container">
-  <div class="theme-themeplate">Template</div>
   <div class="theme-name">Name</div>
   <div class="base-theme-colors">Base</div>
   <div class="normal-theme-colors">Normal</div>
+  <div class="theme-themeplate">Template</div>
   <div class="bright-theme-colors">Bright</div>
   <div class="theme-template-select">
     <!-- svelte-ignore a11y-no-onchange -->
-    <select bind:value={selectedTheme} on:change={onTemplateChange}>
+    <select
+      class="theme-select"
+      bind:value={selectedTheme}
+      on:change={onTemplateChange}
+    >
       {#each allThemes() as theme}
         <option value={theme.name}>
           {theme.name}
@@ -35,7 +39,7 @@
     </select>
   </div>
   <div class="theme-name-input">
-    <input type="text" bind:value={$theme.name} />
+    <input class="name-input" type="text" bind:value={$theme.name} />
   </div>
   <div class="base-foreground">
     <input

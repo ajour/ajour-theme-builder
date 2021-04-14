@@ -374,10 +374,14 @@ interface Colors {
   error: string
 }
 
-const theme = writable<Theme>(cloneDeep(dark))
+const initialTheme = cloneDeep(dark)
+initialTheme.name += ' Custom'
+
+const theme = writable<Theme>(initialTheme)
 
 const resetTheme = (name: string): void => {
   const selected = allThemes().find((theme) => theme.name === name)
+  selected.name += ' Custom'
 
   if (selected) {
     theme.set(cloneDeep(selected))
