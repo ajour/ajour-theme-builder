@@ -25,6 +25,7 @@
   <div class="normal-theme-colors">Normal</div>
   <div class="bright-theme-colors">Bright</div>
   <div class="theme-template-select">
+    <!-- svelte-ignore a11y-no-onchange -->
     <select bind:value={selectedTheme} on:change={onTemplateChange}>
       {#each allThemes() as theme}
         <option value={theme.name}>
