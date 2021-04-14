@@ -2,7 +2,7 @@
   import Gui from '$lib/Gui.svelte'
   import Colors from '$lib/Colors.svelte'
   import Share from '$lib/Share.svelte'
-  import { theme, defaultTheme } from '$lib/theme'
+  import { theme, resetTheme } from '$lib/theme'
   import { exportTheme } from '$lib/util'
   import { onMount } from 'svelte'
 
@@ -20,7 +20,7 @@
 
   const onClickReset = () => {
     window.history.replaceState('', '', '/')
-    $theme = defaultTheme
+    resetTheme()
   }
 
   onMount(() => {

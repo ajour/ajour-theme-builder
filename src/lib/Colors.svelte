@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { theme } from '$lib/theme'
+  import { theme, allThemes } from '$lib/theme'
   import './Colors.scss'
   import { updateThemeUrlParams } from './util'
 
@@ -9,10 +9,20 @@
 </script>
 
 <div class="grid-theme-container">
+  <div class="theme-themeplate">Template</div>
   <div class="theme-name">Name</div>
   <div class="base-theme-colors">Base</div>
   <div class="normal-theme-colors">Normal</div>
   <div class="bright-theme-colors">Bright</div>
+  <div class="theme-template-select">
+    <select bind:value={$theme}>
+      {#each allThemes() as theme}
+        <option value={theme}>
+          {theme.name}
+        </option>
+      {/each}
+    </select>
+  </div>
   <div class="theme-name-input">
     <input type="text" bind:value={$theme.name} />
   </div>

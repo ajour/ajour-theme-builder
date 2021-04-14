@@ -1,6 +1,29 @@
+import { cloneDeep } from 'lodash-es'
 import { writable } from 'svelte/store'
 
-const defaultTheme: Theme = {
+const ayu: Theme = {
+  name: 'Ayu',
+  palette: {
+    base: {
+      background: '#1f2430',
+      foreground: '#232834',
+    },
+    normal: {
+      primary: '#987a47',
+      secondary: '#315e6b',
+      surface: '#60697a',
+      error: '#712a34',
+    },
+    bright: {
+      primary: '#ffcc66',
+      secondary: '#5ccfe6',
+      surface: '#cbccc6',
+      error: '#ff3333',
+    },
+  },
+}
+
+const dark: Theme = {
   name: 'Dark',
   palette: {
     base: {
@@ -20,6 +43,10 @@ const defaultTheme: Theme = {
       error: '#C13047',
     },
   },
+}
+
+const allThemes = (): Theme[] => {
+  return [cloneDeep(dark), cloneDeep(ayu)]
 }
 
 interface Theme {
@@ -45,8 +72,11 @@ interface Colors {
   error: string
 }
 
-// LOL deep copy hack
-const theme = writable<Theme>(JSON.parse(JSON.stringify(defaultTheme)))
+const theme = writable<Theme>(cloneDeep(dark))
 
-export { theme, defaultTheme }
+const resetTheme = (): void => {
+  theme.set(dark)
+}
+
+export { theme, allThemes, resetTheme }
 export type { Theme }
