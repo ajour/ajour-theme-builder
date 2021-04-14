@@ -20,7 +20,7 @@
 
   const onClickReset = () => {
     window.history.replaceState('', '', '/')
-    resetTheme()
+    resetTheme('Dark')
   }
 
   onMount(() => {

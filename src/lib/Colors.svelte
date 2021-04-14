@@ -1,10 +1,20 @@
 <script lang="ts">
-  import { theme, allThemes } from '$lib/theme'
+  import { theme, allThemes, resetTheme } from '$lib/theme'
   import './Colors.scss'
   import { updateThemeUrlParams } from './util'
 
+  $: selectedTheme = 'Dark'
+  theme.subscribe((newTheme) => {
+    selectedTheme = newTheme.name
+  })
+
   const onColorChange = () => {
     updateThemeUrlParams($theme)
+  }
+
+  const onTemplateChange = () => {
+    console.log('changed')
+    resetTheme(selectedTheme)
   }
 </script>
 
@@ -15,7 +25,7 @@
   <div class="normal-theme-colors">Normal</div>
   <div class="bright-theme-colors">Bright</div>
   <div class="theme-template-select">
-    <select bind:value={$theme.name}>
+    <select bind:value={selectedTheme} on:change={onTemplateChange}>
       {#each allThemes() as theme}
         <option value={theme.name}>
           {theme.name}
