@@ -15,9 +15,9 @@
   <div class="normal-theme-colors">Normal</div>
   <div class="bright-theme-colors">Bright</div>
   <div class="theme-template-select">
-    <select bind:value={$theme}>
+    <select bind:value={$theme.name}>
       {#each allThemes() as theme}
-        <option value={theme}>
+        <option value={theme.name}>
           {theme.name}
         </option>
       {/each}
