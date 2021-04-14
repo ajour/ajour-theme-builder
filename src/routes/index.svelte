@@ -25,10 +25,16 @@
   }
 
   onMount(() => {
+    const urlParams = new URLSearchParams(window.location.search)
+    console.log('params:', urlParams)
+    const hasTheme = urlParams.has('theme')
+    console.log('has theme', hasTheme)
+
+    if (hasTheme) {
+      console.log(urlParams.get('theme'))
+    }
+
     const queryTheme = JSON.parse($page.query.get('theme'))
-    console.log('page: ', page)
-    console.log('query: ', page.query?.get('theme'))
-    console.log('theme: ', queryTheme)
 
     if (queryTheme) {
       $theme = queryTheme
