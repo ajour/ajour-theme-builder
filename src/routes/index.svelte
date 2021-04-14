@@ -26,6 +26,9 @@
 
   onMount(() => {
     const queryTheme = JSON.parse($page.query.get('theme'))
+    console.log('page: ', page)
+    console.log('query: ', page.query.get('theme'))
+    console.log('theme: ', queryTheme)
 
     if (queryTheme) {
       $theme = queryTheme
