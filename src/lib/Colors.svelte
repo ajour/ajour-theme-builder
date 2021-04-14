@@ -4,9 +4,6 @@
   import { updateThemeUrlParams } from './util'
 
   $: selectedTheme = null
-  theme.subscribe((newTheme) => {
-    selectedTheme = newTheme.name
-  })
 
   const onColorChange = () => {
     updateThemeUrlParams($theme)
