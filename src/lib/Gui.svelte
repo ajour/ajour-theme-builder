@@ -163,27 +163,31 @@
         {#each addons as { title, local, remote, latest, status, isExpanded }}
           <tr>
             <td
-              style="background-color: {$theme.palette.base
-                .foreground}; color: {isExpanded
+              style="background-color: {isExpanded
+                ? $theme.palette.normal.primary + '50'
+                : $theme.palette.base.foreground}; color: {isExpanded
                 ? $theme.palette.bright.primary
-                : $theme.palette.bright.surface}; "
+                : $theme.palette.bright.surface};"
             >
               {title}
             </td>
             <td
-              style="width: 15%; background-color: {$theme.palette.base
-                .foreground}; color: {$theme.palette.normal.surface}; "
-              >{local}</td
+              style="width: 15%; background-color: {isExpanded
+                ? $theme.palette.normal.primary + '50'
+                : $theme.palette.base.foreground}; color: {$theme.palette.normal
+                .surface}; ">{local}</td
             >
             <td
-              style="width: 15%; background-color: {$theme.palette.base
-                .foreground}; color: {$theme.palette.normal.surface}; "
-              >{remote}</td
+              style="width: 15%; background-color: {isExpanded
+                ? $theme.palette.normal.primary + '50'
+                : $theme.palette.base.foreground}; color: {$theme.palette.normal
+                .surface}; ">{remote}</td
             >
             <td
-              style="width: 15%; background-color: {$theme.palette.base
-                .foreground}; color: {$theme.palette.normal.surface}; "
-              >{latest}</td
+              style="width: 15%; background-color: {isExpanded
+                ? $theme.palette.normal.primary + '50'
+                : $theme.palette.base.foreground}; color: {$theme.palette.normal
+                .surface}; ">{latest}</td
             >
             <td
               class="align-center"
