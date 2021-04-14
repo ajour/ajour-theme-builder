@@ -64,7 +64,7 @@
         <div
           class="gui-menu-segmented-button gui-menu-segmented-button-active"
           style="color: {$theme.palette.bright
-            .primary}; background-color: {$theme.palette.bright.primary}{32}"
+            .primary}; background-color: {$theme.palette.normal.primary}"
         >
           <p>My Addons</p>
         </div>
@@ -256,7 +256,7 @@
                         class="expanded-button"
                         style="color: {$theme.palette.bright
                           .error}; background-color: {$theme.palette.normal
-                          .error}"
+                          .error}{25}"
                       >
                         Delete
                       </p>
