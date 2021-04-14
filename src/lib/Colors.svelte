@@ -13,7 +13,6 @@
   }
 
   const onTemplateChange = () => {
-    console.log('changed')
     resetTheme(selectedTheme)
   }
 </script>
