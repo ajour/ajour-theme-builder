@@ -3,7 +3,7 @@
   import './Colors.scss'
   import { updateThemeUrlParams } from './util'
 
-  $: selectedTheme = 'Dark'
+  $: selectedTheme = null
   theme.subscribe((newTheme) => {
     selectedTheme = newTheme.name
   })
@@ -31,6 +31,7 @@
       bind:value={selectedTheme}
       on:change={onTemplateChange}
     >
+      <option value={null}>-- Select a template --</option>
       {#each allThemes() as theme}
         <option value={theme.name}>
           {theme.name}
