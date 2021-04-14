@@ -9,9 +9,13 @@
 </script>
 
 <div class="grid-theme-container">
+  <div class="theme-name">Name</div>
   <div class="base-theme-colors">Base</div>
   <div class="normal-theme-colors">Normal</div>
   <div class="bright-theme-colors">Bright</div>
+  <div class="theme-name-input">
+    <input type="text" bind:value={$theme.name} />
+  </div>
   <div class="base-foreground">
     <input
       type="color"
