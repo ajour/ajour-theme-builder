@@ -5,7 +5,6 @@
   import { theme, defaultTheme } from '$lib/theme'
   import { exportTheme } from '$lib/util'
   import { onMount } from 'svelte'
-  import { page } from '$app/stores'
 
   import './index.scss'
 
@@ -26,18 +25,10 @@
 
   onMount(() => {
     const urlParams = new URLSearchParams(window.location.search)
-    console.log('params:', urlParams)
     const hasTheme = urlParams.has('theme')
-    console.log('has theme', hasTheme)
 
     if (hasTheme) {
-      console.log(urlParams.get('theme'))
-    }
-
-    const queryTheme = JSON.parse($page.query.get('theme'))
-
-    if (queryTheme) {
-      $theme = queryTheme
+      $theme = JSON.parse(urlParams.get('theme'))
     }
   })
 </script>
