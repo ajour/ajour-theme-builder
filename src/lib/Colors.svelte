@@ -3,10 +3,7 @@
   import './Colors.scss'
   import { updateThemeUrlParams } from './util'
 
-  $: selectedTheme = 'Dark'
-  theme.subscribe((newTheme) => {
-    selectedTheme = newTheme.name
-  })
+  $: selectedTheme = null
 
   const onColorChange = () => {
     updateThemeUrlParams($theme)
@@ -14,6 +11,10 @@
 
   const onTemplateChange = () => {
     resetTheme(selectedTheme)
+    updateThemeUrlParams($theme)
+  }
+
+  const onNameChange = () => {
     updateThemeUrlParams($theme)
   }
 </script>
@@ -31,6 +32,7 @@
       bind:value={selectedTheme}
       on:change={onTemplateChange}
     >
+      <option value={null}>-- Select a template --</option>
       {#each allThemes() as theme}
         <option value={theme.name}>
           {theme.name}
@@ -39,7 +41,12 @@
     </select>
   </div>
   <div class="theme-name-input">
-    <input class="name-input" type="text" bind:value={$theme.name} />
+    <input
+      class="name-input"
+      type="text"
+      bind:value={$theme.name}
+      on:change={onNameChange}
+    />
   </div>
   <div class="base-foreground">
     <input

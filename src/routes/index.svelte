@@ -7,6 +7,7 @@
 
   import './index.scss'
 
+  $: unique = 0
   $: copied = false
 
   const onClickCopyTheme = () => {
@@ -26,6 +27,7 @@
   const onClickReset = () => {
     window.history.replaceState('', '', '/')
     resetTheme('Dark')
+    unique += 1
   }
 
   onMount(() => {
@@ -40,7 +42,9 @@
 
 <main>
   <Gui />
-  <Colors />
+  {#key unique}
+    <Colors />
+  {/key}
   <!-- TODO: We should refactor this into its own component as well.-->
   <div class="grid-buttons-container">
     <div class="copy-button">

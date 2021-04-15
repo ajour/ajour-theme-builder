@@ -199,7 +199,7 @@
               >{status}</td
             >
           </tr>
-          <div
+          <tr
             class="table-row-gap"
             style="background-color: {$theme.palette.base.background};"
           />
