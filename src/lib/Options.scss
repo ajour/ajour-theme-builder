@@ -1,15 +1,37 @@
-.grid-theme-container {
+.grid-options-container {
   display: grid;
-  grid-template-columns: 75px min-content min-content min-content min-content;
-  grid-template-rows: 23px 23px 23px;
+  grid-template-columns: 150px max-content;
+  grid-template-rows: 25px 25px;
   gap: 1px 1px;
   align-items: center;
   justify-content: center;
   margin: 20px;
   grid-template-areas:
-    'base-theme-colors base-foreground base-background base-background base-background'
-    'normal-theme-colors normal-primary normal-secondary normal-surface normal-error'
-    'bright-theme-colors bright-primary bright-secondary bright-surface bright-error';
+    'theme-template-select'
+    'theme-name-input';
+}
+
+.theme-template-select {
+  grid-area: theme-template-select;
+  padding: 1px;
+  height: 21px;
+
+  .theme-select {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.theme-name-input {
+  grid-area: theme-name-input;
+  padding: 1px;
+  height: 21px;
+
+  .name-input {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
 
 .base-theme-colors {

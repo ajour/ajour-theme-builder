@@ -1,6 +1,7 @@
 <script lang="ts">
   import Gui from '$lib/Gui.svelte'
   import Colors from '$lib/Colors.svelte'
+  import Options from '$lib/Options.svelte'
   import { theme, resetTheme } from '$lib/theme'
   import { buildThemeUrl } from '$lib/util'
   import { onMount } from 'svelte'
@@ -44,6 +45,7 @@
   <Gui />
   {#key unique}
     <Colors />
+    <Options />
   {/key}
   <!-- TODO: We should refactor this into its own component as well.-->
   <div class="grid-buttons-container">
